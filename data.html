@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="ficon.ico" type="image/x-icon">
+  <title>Connect Discord | Horizon Market Edge</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1B1919;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 40px 30px;
+      background: #2e2d2d;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      background: #1b1919;
+      color: #fff;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      background: aliceblue;
+      color: #0a1a2f;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: alice blue;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+      
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Connect Your Discord</h1>
+    <p>Enter your email (used during payment) and your Discord ID to unlock access to our members-only channel.</p>
+
+    <form id="discordForm">
+      <label>Email:
+        <input id="email" type="email" required />
+      </label>
+      <label>Discord ID:
+        <input id="discordId" required />
+      </label>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+
+    <footer>
+      &copy; 2025 Horizon Market Edge. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('discordForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const discordId = document.getElementById('discordId').value;
+
+      const resp = await fetch('/connect-discord', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, discordId })
+      });
+
+      const data = await resp.json();
+      alert(data.message);
+    });
+  </script>
+</body>
+</html>
