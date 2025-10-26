@@ -5,19 +5,19 @@
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://horizonmarketedge-six.vercel.app/about</loc>
+    <loc>https://horizonmarketedge-six.vercel.app/about.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://horizonmarketedge-six.vercel.app/market-outlook-podcast</loc>
+    <loc>https://horizonmarketedge-six.vercel.app/market-outlook-podcast.html</loc>
     <priority>0.64</priority>
   </url>
   <url>
-    <loc>https://horizonmarketedge-six.vercel.app/market-outlook-blog</loc>
+    <loc>https://horizonmarketedge-six.vercel.app/market-outlook-blog.html</loc>
     <priority>0.40</priority>
   </url>
   <url>
-    <loc>https://horizonmarketedge-six.vercel.app/personal-finance-guide</loc>
+    <loc>https://horizonmarketedge-six.vercel.app/personal-finance-guide.html</loc>
     <priority>0.20</priority>
   </url>
 </urlset>
